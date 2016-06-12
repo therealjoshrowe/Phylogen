@@ -3,7 +3,7 @@ using System;
 
 namespace phylogen
 {
-    class TaxaBlock
+    public class TaxaBlock
     {
         private int dimensions;
         private List<string> taxLabels;
@@ -23,7 +23,7 @@ namespace phylogen
             TaxLabels = new List<string>();
         }
     }
-    class CharactersBlock
+    public class CharactersBlock
     {
         private List<string> dataMatrix;
         private int dimensions;
@@ -34,6 +34,7 @@ namespace phylogen
         private List<char> symbols;
         private bool interleave;
         private int interleaveLength;
+        private List<String> equates;
 
         public List<string> DataMatrix
         {
@@ -67,7 +68,7 @@ namespace phylogen
 
         public List<char> Symbols
         {
-            get; set;
+            get;
         }
 
         public bool Interleave
@@ -80,8 +81,14 @@ namespace phylogen
             get; set;
         }
 
+        public List<string> Equates
+        {
+            get;
+        }
+
         public CharactersBlock()
         {
+            DataType = "";
             DataMatrix = new List<string>();
             Dimensions = 0;
             RespectCase = false;
@@ -90,9 +97,10 @@ namespace phylogen
             Symbols = new List<char>();
             Interleave = false;
             interleaveLength = 0;
+            Equates = new List<string>();
         }
     }
-    class NexusObeject
+    public class NexusObject
     {
         private TaxaBlock t;
         private CharactersBlock c;
@@ -107,7 +115,7 @@ namespace phylogen
             get; set;
         }
 
-        public NexusObeject()
+        public NexusObject()
         {
             T = new TaxaBlock();
             C = new CharactersBlock();

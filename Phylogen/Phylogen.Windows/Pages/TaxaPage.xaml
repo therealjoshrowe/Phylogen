@@ -9,7 +9,7 @@
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
         <Grid.Resources>
-            
+
         </Grid.Resources>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="812*"/>
@@ -21,22 +21,24 @@
         	<Run Text="taxa "/>
         	<Run Text="information. Start by clicking on the add taxa button. Enter a taxon's name and repeat."/>
         </TextBlock>
-        <ScrollViewer Height="623" Margin="10,145,0,0" VerticalAlignment="Top" HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Auto" VerticalScrollMode="Enabled" Grid.ColumnSpan="3">
-            <StackPanel Name="taxaStackPanel" Height="555" Width="1283" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Enabled" Margin="150, 150, 150, 0" Grid.ColumnSpan="3">
+            <StackPanel Name="taxaStackPanel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="3" Margin="0,0,0,0"/>
         </ScrollViewer>
         <Button x:Name="addTaxonButton" Content="Add Taxon" HorizontalAlignment="Left" Margin="46.059,48,0,0" VerticalAlignment="Top" Height="95" Width="234" FontSize="36" Click="addTaxonButton_Click" Grid.Column="2"/>
-        <AppBar Margin="0,0,0,682" Grid.ColumnSpan="3">
+        <TextBlock x:Name="taxaNumberBlock" Grid.Column="2" HorizontalAlignment="Left" Margin="325,51,0,0" TextWrapping="Wrap" Text="Taxa #:  " VerticalAlignment="Top" Height="89" Width="205" FontSize="36"/>
+        <TextBlock x:Name="pageTitleBlock" HorizontalAlignment="Left" Margin="483,0,0,0" TextWrapping="Wrap" Text="Taxa Page" VerticalAlignment="Top" Height="140" Width="319" FontSize="72"/>
+        <AppBar Margin="0,0,0,682" Background ="Black" Opacity="1.0" Grid.ColumnSpan="3">
             <StackPanel x:Name="AppBarPanel" Orientation="Horizontal">
-                <AppBarButton x:Name="taxaPageButton" Icon="Go" Label="Taxa Page"/>
-                <AppBarButton x:Name="charactersPageButton" Icon="Go" Label="Characters Page"/>
+                <AppBarButton x:Name="taxaPageButton" Icon="Go" Label="Taxa Page" Click="taxaPageButton_Click"/>
+                <AppBarButton x:Name="charactersPageButton" Icon="Go" Label="Characters Page" Click="charactersPageButton_Click"/>
                 <AppBarButton x:Name="matrixPageButton" Icon="Go" Label="Matrix Page"/>
                 <AppBarButton x:Name="PreviewPageButton" Icon="Go" Label="Preview Page"/>
+                <AppBarSeparator/>
                 <AppBarButton x:Name="inputFromNEXUSButton" Icon="OpenFile" Label="Input From NEXUS"/>
                 <AppBarButton x:Name="outputToNEXUSButton" Icon="Save" Label="Output To NEXUS"/>
-                
+
             </StackPanel>
         </AppBar>
-        <TextBlock x:Name="taxaNumberBlock" Grid.Column="2" HorizontalAlignment="Left" Margin="325,51,0,0" TextWrapping="Wrap" Text="Taxa #:  " VerticalAlignment="Top" Height="89" Width="205" FontSize="36"/>
 
     </Grid>
 </Page>

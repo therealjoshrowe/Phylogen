@@ -8,6 +8,41 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="393*"/>
+            <ColumnDefinition Width="973*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="156,116,0,0" TextWrapping="Wrap" Text="How many characters or traits do you want to record?" VerticalAlignment="Top" Height="100" Width="480" FontSize="36" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="nCharTextBox" HorizontalAlignment="Left" Margin="384,112,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="128" Width="250" InputScope="Number" PlaceholderText="#" FontSize="36" Foreground="White" Background="Black" Grid.Column="1" Header="Char Count" TextChanged="nCharTextBox_TextChanged"/>
+        <TextBlock x:Name="textBlock1" HorizontalAlignment="Left" Margin="156,256,0,0" TextWrapping="Wrap" Text="What datatype do you want to process?" VerticalAlignment="Top" Height="100" Width="480" FontSize="36" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="comboBox" HorizontalAlignment="Left" Margin="384,256,0,0" VerticalAlignment="Top" Height="100"  Width="250" BorderBrush="White" Background="White" Foreground="Black" Grid.Column="1">
+            <TextBlock Foreground="Black" FontSize="36" Text="STANDARD" SelectionHighlightColor="Blue"/>
+            <TextBlock FontSize="36" SelectionHighlightColor="Blue" Text="DNA"/>
+            <TextBlock FontSize="36" SelectionHighlightColor="Blue" Text="RNA"/>
+            <TextBlock FontSize="36" SelectionHighlightColor="Blue" Text="NUCLEOTIDE"/>
+            <TextBlock FontSize="36" SelectionHighlightColor="Blue" Text="PROTEIN"/>
+            <TextBlock FontSize="36" SelectionHighlightColor="Blue" Text="CONTINUOUS"/>
+        </ComboBox>
+        <ToggleSwitch x:Name="toggleSwitch" Header="Respect Case" HorizontalAlignment="Left" Margin="150,374,0,0" VerticalAlignment="Top" Height="143" Width="233" FontSize="36" Foreground="White"/>
+        <ToggleSwitch x:Name="toggleSwitch_Copy" Header="Interleave" HorizontalAlignment="Left" Margin="65,374,0,0" VerticalAlignment="Top" Height="143" Width="233" FontSize="36" Grid.Column="1" Toggled="toggleSwitch_Copy_Toggled"/>
+        <TextBox x:Name="interleaveCountTextBox" Grid.Column="1" HorizontalAlignment="Left" Margin="384,376,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="131" Width="265" FontSize="36" Background="Black" Foreground="White" Header="Interleave Count" TextChanged="interleaveCountTextBox_TextChanged" Visibility="Collapsed"/>
+        <TextBox x:Name="gapTextBox" HorizontalAlignment="Left" Margin="156,524,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="131" Width="214" Background="Black" Foreground="White" FontSize="36" Header="Gap Char" TextChanged="gapTextBox_TextChanged"/>
+        <TextBox x:Name="missingTextBox" HorizontalAlignment="Left" Margin="71,524,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Height="131" Width="214" Background="Black" Foreground="White" FontSize="36" Header="Missing Char" Grid.Column="1" TextChanged="missingTextBox_TextChanged"/>
+        <TextBlock x:Name="titleTextBlock" HorizontalAlignment="Left" Margin="10,10,0,0" TextWrapping="Wrap" Text="Characters Page" VerticalAlignment="Top" Height="101" Width="528" FontSize="72" Grid.Column="1"/>
+        <ScrollViewer Grid.Column="1" HorizontalAlignment="Left" Height="193" Margin="384,550,0,0" VerticalAlignment="Top" Width="366">
+            <StackPanel x:Name="equateSymbolStack" Width="246"/>
+        </ScrollViewer>
+        <Button x:Name="addEquateSymbolButton" Content="Add Equate Sym" Grid.Column="1" HorizontalAlignment="Left" Margin="752,562,0,0" VerticalAlignment="Top" Height="81" Width="214" FontSize="24" Click="addEquateSymbolButton_Click"/>
+        <AppBar Height="111" VerticalAlignment="Top" Grid.ColumnSpan="2">
+            <StackPanel x:Name="AppBarPanel" Orientation="Horizontal">
+                <AppBarButton x:Name="taxaPageButton" Icon="Go" Label="Taxa Page" Click="taxaPageButton_Click"/>
+                <AppBarButton x:Name="charactersPageButton" Icon="Go" Label="Characters Page" Click="charactersPageButton_Click"/>
+                <AppBarButton x:Name="matrixPageButton" Icon="Go" Label="Matrix Page"/>
+                <AppBarButton x:Name="PreviewPageButton" Icon="Go" Label="Preview Page"/>
+                <AppBarSeparator/>
+                <AppBarButton x:Name="inputFromNEXUSButton" Icon="OpenFile" Label="Input From NEXUS"/>
+                <AppBarButton x:Name="outputToNEXUSButton" Icon="Save" Label="Output To NEXUS"/>
+            </StackPanel>
+        </AppBar>
     </Grid>
 </Page>

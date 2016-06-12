@@ -1,5 +1,4 @@
-﻿using phylogen;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -17,17 +16,20 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Navigation;
 
+// The Blank Application template is documented at http://go.microsoft.com/fwlink/?LinkId=234227
 
-namespace Phylogen
+namespace Prototype
 {
-   
+    /// <summary>
+    /// Provides application-specific behavior to supplement the default Application class.
+    /// </summary>
     public sealed partial class App : Application
     {
+        public static NexusFile f = new NexusFile();
 #if WINDOWS_PHONE_APP
         private TransitionCollection transitions;
 #endif
-        public static NexusObject o;
-       
+
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -36,7 +38,7 @@ namespace Phylogen
         {
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
-            o = new NexusObject();
+
         }
 
         /// <summary>
@@ -95,7 +97,7 @@ namespace Phylogen
                 // When the navigation stack isn't restored navigate to the first page,
                 // configuring the new page by passing required information as a navigation
                 // parameter
-                if (!rootFrame.Navigate(typeof(TaxaPage), e.Arguments))
+                if (!rootFrame.Navigate(typeof(MainPage), e.Arguments))
                 {
                     throw new Exception("Failed to create initial page");
                 }

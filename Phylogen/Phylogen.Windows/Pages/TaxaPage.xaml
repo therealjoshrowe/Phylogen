@@ -31,7 +31,7 @@
             <StackPanel x:Name="AppBarPanel" Orientation="Horizontal">
                 <AppBarButton x:Name="taxaPageButton" Icon="Go" Label="Taxa Page" Click="taxaPageButton_Click"/>
                 <AppBarButton x:Name="charactersPageButton" Icon="Go" Label="Characters Page" Click="charactersPageButton_Click"/>
-                <AppBarButton x:Name="matrixPageButton" Icon="Go" Label="Matrix Page"/>
+                <AppBarButton x:Name="matrixPageButton" Icon="Go" Label="Matrix Page" Click="matrixPageButton_Click"/>
                 <AppBarButton x:Name="PreviewPageButton" Icon="Go" Label="Preview Page"/>
                 <AppBarSeparator/>
                 <AppBarButton x:Name="inputFromNEXUSButton" Icon="OpenFile" Label="Input From NEXUS"/>

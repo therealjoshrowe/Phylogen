@@ -43,10 +43,22 @@ namespace Phylogen
             }
         }
 
+        public void matrixPageButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (dataValidated())
+            {
+                saveCharactersDataToModel();
+                this.Frame.Navigate(typeof(MatrixPage));
+            }
+            else
+            {
+                showErrorDisloag();
+            }
+        }
+
         public void charactersPageButton_Click(object sender, RoutedEventArgs e)
         {
 
-            this.Frame.Navigate(typeof(CharactersPage));
         }
 
         private void gapTextBox_TextChanged(object sender, TextChangedEventArgs e)

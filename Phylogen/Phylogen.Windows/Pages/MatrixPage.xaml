@@ -1,5 +1,5 @@
 ﻿<Page
-    x:Class="Phylogen.Pages.MatrixPage"
+    x:Class="Phylogen.MatrixPage"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:Phylogen.Pages"
@@ -8,6 +8,22 @@
     mc:Ignorable="d">
 
     <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Margin="467,0,0,0" TextWrapping="Wrap" Text="Matrix Page" VerticalAlignment="Top" Height="145" Width="381" FontSize="72"/>
+        <ScrollViewer VerticalScrollBarVisibility="Auto" VerticalScrollMode="Enabled" Margin="150, 150, 150, 0" Grid.ColumnSpan="3">
+            <StackPanel Name="matrixStackPanel" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.ColumnSpan="3" Margin="0,0,0,0"/>
+        </ScrollViewer>
+        <AppBar Margin="0,0,0,682" Background ="Black" Opacity="1.0" Grid.ColumnSpan="3">
+            <StackPanel x:Name="AppBarPanel" Orientation="Horizontal">
+                <AppBarButton x:Name="taxaPageButton" Icon="Go" Label="Taxa Page" Click="taxaPageButton_Click"/>
+                <AppBarButton x:Name="charactersPageButton" Icon="Go" Label="Characters Page" Click="charactersPageButton_Click"/>
+                <AppBarButton x:Name="matrixPageButton" Icon="Go" Label="Matrix Page" Click="matrixPageButton_Click"/>
+                <AppBarButton x:Name="PreviewPageButton" Icon="Go" Label="Preview Page"/>
+                <AppBarSeparator/>
+                <AppBarButton x:Name="inputFromNEXUSButton" Icon="OpenFile" Label="Input From NEXUS"/>
+                <AppBarButton x:Name="outputToNEXUSButton" Icon="Save" Label="Output To NEXUS"/>
+
+            </StackPanel>
+        </AppBar>
 
     </Grid>
 </Page>

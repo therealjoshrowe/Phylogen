@@ -112,18 +112,23 @@ namespace Phylogen
 
         public void taxaPageButton_Click(object sender, RoutedEventArgs e)
         {
-            App.o.T.Dimensions = 0;
-            App.o.T.TaxLabels.Clear();
-            foreach (Grid g in taxaStackPanel.Children)
-            {
-                TextBox t = g.Children.ElementAt(0) as TextBox;
-                App.o.T.TaxLabels.Add(t.Text);
-                App.o.T.Dimensions++;
-            }
+            savePageDataToModel();
             this.Frame.Navigate(typeof(TaxaPage), null);
         }
 
         public void charactersPageButton_Click(object sender, RoutedEventArgs e)
+        {
+            savePageDataToModel();
+            this.Frame.Navigate(typeof(CharactersPage));
+        }
+
+        private void matrixPageButton_Click(object sender, object e)
+        {
+            savePageDataToModel();
+            this.Frame.Navigate(typeof(MatrixPage));
+        }
+
+        private void savePageDataToModel()
         {
             App.o.T.Dimensions = 0;
             App.o.T.TaxLabels.Clear();
@@ -133,7 +138,6 @@ namespace Phylogen
                 App.o.T.TaxLabels.Add(t.Text);
                 App.o.T.Dimensions++;
             }
-            this.Frame.Navigate(typeof(CharactersPage));
         }
     }
 }
